@@ -43,25 +43,14 @@ public class App {
     }
 
     private static void save(ArrayList<StudentCheckIn> entrys) {
-        // try {
-        // FileOutputStream fileOutput = new FileOutputStream("entrys.ser");
-        // ObjectOutputStream objectOut = new ObjectOutputStream(fileOutput);
-        // objectOut.writeObject(entrys);
-        // objectOut.close();
-        // } catch (IOException ex) {
-        // System.out.println("IT DIDN'T SAVE FIX IT");
-        // }
         try {
-            String fileName = "entry.ser";
-            FileOutputStream fileOut = new FileOutputStream(fileName);
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(entrys);
-            out.close();
-            fileOut.close();
-            System.out.printf("Serialized data is saved to " + fileName);
-        } catch (IOException i) {
-            i.printStackTrace();
+            FileOutputStream fileOutput = new FileOutputStream("entrys.ser");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOutput);
+            objectOut.writeObject(entrys);
+            objectOut.close();
+        } catch (IOException ex) {
+            System.out.println("IT DIDN'T SAVE FIX IT");
         }
-    }
 
+    
 }
